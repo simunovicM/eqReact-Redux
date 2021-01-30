@@ -1,0 +1,25 @@
+{
+  "name": "eqreact-redux",
+  "version": "1.0.0",
+  "description": "Simple functional redux implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simunovicM/eqReact-Redux.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "simple"
+  ],
+  "author": "Marko Simunovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simunovicM/eqReact-Redux/issues"
+  },
+  "homepage": "https://github.com/simunovicM/eqReact-Redux#readme",
+  "devDependencies": {}
+}

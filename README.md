@@ -1,1 +1,1 @@
-# eqRedux-React
+# eqReact-Redux

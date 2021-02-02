@@ -1,13 +1,19 @@
-import { connect as reduxConnect } from 'react-redux';
+const reduxConnect = require('react-redux').connect;
 
 var changeState = fnc => store.dispatch({ type: null, fnc: fnc });
 const mapDispatchToProps = () => ({ changeState });
 
 const mapStateToProps = mapFnc => state => mapFnc ? mapFnc(state) : state;
 
-export const connect = (component, mapFnc) => reduxConnect(mapStateToProps(mapFnc), mapDispatchToProps, null, { pure: false })(component);
-export const reducer = initialState => (state, action) => action.fnc ? action.fnc(state || initialState || {}) : state || initialState || {};
+exports.connect = (component, mapFnc) => reduxConnect(mapStateToProps(mapFnc), mapDispatchToProps, null, { pure: false })(component);
+exports.reducer = initialState => (state, action) => {
+    var obj = action.fnc ? action.fnc(state || initialState || {}) : state || initialState || {};
+    return {
+        ...(state || {}),
+        ...obj
+    };
+};
 
 var store = null;
-export const setStore = (s) => store = s;
-export const getStore = () => store;
+exports.setStore = s => store = s;
+exports.getStore = () => store;
